@@ -1,0 +1,189 @@
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+    background-color: #3298a8;
+}
+.navbar-brand {
+    margin-left: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.navbar-nav {
+    margin-right: 100px;
+}
+h1 {
+    font-family: 'Concert One', cursive;
+    font-size: 20px;
+    color: white;
+    margin-left: 50px;
+    margin-top: -40px;
+}
+h2 {
+    font-family: 'Concert One', cursive;
+    font-size: 20px;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.jumbotron {
+    background: linear-gradient(to bottom, #33cccc 0%, #66ffcc 100%);   
+    max-width: 100%;
+    height: auto;
+}
+.display-4, .lead, .my-4, .caption {
+    margin-left: 100px;
+    margin-top: 5px;
+}
+body {
+    background: linear-gradient(to bottom, #ffffff 0%, #99ffcc 100%);
+}
+.my-4 {
+    margin-right: 100px;
+}
+.card-1 {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 450px;
+    width: 580px;
+    margin-left: 100px;
+}
+.card-2, .row {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 1000px;
+    width: 510px;
+    margin-left: 750px;
+    margin-right: 100px;
+    margin-top: -449px;
+    margin-bottom: 100px;
+}
+.card-header {
+    font-family: 'Concert One', cursive;
+    letter-spacing: 7px;
+    font-size: 25px;
+    text-align: center;
+    color: #326fa8;
+}
+.main-footer {
+    text-align: left;
+    color: gray;
+    margin-top: 100px;
+    height: 50px;
+    padding: 10px 0px 0px 20px;
+}
+.form-group {
+    width: 250px;
+    margin-left: 10px;
+}
+.form-check-1 {
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.form-check-2 {
+    margin-left: 20px;
+    margin-top: 15px;
+    position: relative;
+}
+.symptoms {
+    height: 80px;
+    width: 80px;
+    margin-left: 20px;
+}
+.check-2 {
+    font-size: 20px;
+    margin-left: 20px;
+}
+.btn-primary {
+    width: 580px;
+    margin-left: -20px;
+    margin-bottom: -170px;
+    height: 45px;
+    font-size: 17px;
+    background-color: #3298a8;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.d-inline-block {
+    height: 50px;
+    width: 50px;
+}
+.card-about {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 180px;
+    margin-top: 50px;
+    width: 60rem;
+    height: 350px;
+}
+.card-text {
+    padding: 15px 15px 15px 15px;
+    text-align: justify;
+    font-size: 16px;
+}
+.card-faqs {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 65rem;
+    height: 3000px;
+    margin-left: 155px;
+    margin-top: 50px;
+}
+.card-title {
+    padding: 15px 15px 15px 15px;
+    text-align: justify;
+    color: #487ccf;
+}
+.card-data {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 70rem;
+    height: 1000px;
+    margin-left: 120px;
+    margin-top: 50px;
+}
+.table-hover {
+    width: 67rem;
+}
+.col-data {
+    color: #487ccf;
+}
+.btn-cancel {
+    width: 580px;
+    margin-left: -20px;
+    margin-top: 100px;
+    height: 45px;
+    font-size: 17px;
+    background-color: #e82a43;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.edit-btn {
+    color: green;
+}
+.btn-cancel:hover {
+    background-color: #e81733;
+}
+.btn-submit:hover {
+    background-color: #298a99;
+}
+.card-3 {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 420px;
+    width: 580px;
+    margin-left: 100px;
+    margin-top: -520px;
+    padding: 20px 0px 0px 9px;
+}
+.vid-cap {
+    margin-left: 10px;
+}
