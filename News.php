@@ -8,17 +8,10 @@
                         proven guilty, I won't be credited any points for this endeavor.
 -->
 
-<?php
-    include 'Insert.php';
-
-    $sql = "SELECT * FROM data_table";
-    $result = mysqli_query($conn, $sql)or die(mysqli_error());
-?>
-
 <!DOCTYPE html>
 <head>
     <title>
-        Data / COVID-19 Self Checker
+        News / COVID-19 Self Checker
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -29,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <!--Navigation Bar-->
+   <!--Navigation Bar-->
     <nav class="navbar sticky-top navbar-expand-md">
         <a class="navbar-brand" href="Home.php">
             <img src="https://img.icons8.com/color/48/000000/virus.png" class="d-inline-block align-top" alt="">
@@ -81,60 +74,67 @@
     <!--Header-->
     <div class="jumbotron">
         <h1 class="display-4">
-            Data
+            Latest News
         </h1>
     </div>
     
-    <!--Card Data-->
-    <div class="card card-data">
+    <!--Card News-->
+    <div class="card card-news">
         <div class="card-body">
-           
-            <!--Show Table-->
-            <form method = "post"> 
-                <table class="table table-hover">
-                    <thead>
+            <?php set_time_limit(300); ?>
+            <?php $json_string = file_get_contents("http://newsapi.org/v2/top-headlines?country=ph&category=health&apiKey=7a7bdf4c77b54d07877a2e536dd2e502"); ?>
+            <?php $parsed_json = json_decode($json_string, true); ?>
+            
+            <table class="table table-borderless table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" class="card-grand-title">TOP HEALTH HEADLINES FROM THE PHILIPPINES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($parsed_json['articles'] as $a){ ?>
                         <tr>
-                            <th scope="col" class="col-data">#</th>
-                            <th scope="col" class="col-data">Age</th>
-                            <th scope="col" class="col-data">Gender</th>
-                            <th scope="col" class="col-data">Barangay</th>
-                            <th scope="col" class="col-data">Traveled Abroad?</th>
-                            <th scope="col" class="col-data">Close Contact?</th>
-                            <th scope="col" class="col-data">Symptoms</th>
-                            <th scope="col" class="col-data"></th>
-                            <th scope="col" class="col-data"></th>
+                            <td>
+                                <?php 
+                                    $pic = $a['urlToImage'];
+                                    if (@getimagesize($pic)){
+                                        echo "<img class='news-img' src='" . $pic . "' class='news-img'>";
+                                    } else {
+                                        echo " ";
+                                    }
+                                ?> 
+                                <p class="news-info-title">
+                                    <?php echo $a['title']; ?>
+                                </p>
+                                <p class="news-info-text"> 
+                                    <?php echo $a['description']; ?>
+                                </p> 
+                                <p class="news-info-text">
+                                    <?php echo $a['content']; ?> <?php echo "<a href=" . $a['url'] . ">Click for more</a>"; ?>
+                                </p>
+                                <p class="news-info-publish">
+                                    <?php 
+                                        $author = $a['author']; 
+                                        if (strpos($author,'null')){
+                                            echo " ";
+                                        } else {
+                                            echo $author;
+                                        }
+                                    ?>
+                                    | Publised At: <?php echo date('F j, Y, g:i a', strtotime($a['publishedAt'])); ?>
+                                </p>
+                                <hr class="news-divide">
+                            </td>
                         </tr>
-                    </thead>
-
-                    <!--Fetch Data-->        
-                    <?php
-                        $sql = "SELECT * FROM data_table";
-                        $result = mysqli_query($conn, $sql)or die(mysqli_error());
-
-                        while ($row = mysqli_fetch_array($result)) {
-                    ?>    
-                            <tr>
-                            <td><?php echo $row["Submit_ID"]; ?></td>
-                            <td><?php echo $row["Age"]; ?></td>
-                            <td><?php echo $row["Gender"]; ?></td>
-                            <td><?php echo $row["Barangay"]; ?></td>
-                            <td><?php echo $row["Traveled_Abroad"]; ?></td>
-                            <td><?php echo $row["Close_Contact"]; ?></td>
-                            <td><?php echo $row["Symptoms"]; ?></td>
-                            <td><a class="btn btn-success" href="Edit.php?Submit_ID=<?php echo $row["Submit_ID"]; ?>">Edit</a></td>
-                            <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this data?');" href="Delete.php?Submit_ID=<?php echo $row["Submit_ID"]; ?>">Delete</a></td>
-                            </tr>         
-                    <?php  
-                        } 
-                        mysqli_close($conn);
-                    ?>
-                </table>
-            </form>
+                    <?php } ?>
+                </tbody>
+            </table> 
         </div>
     </div>
-        
+    
     <!--Footer-->
     <div class="main-footer">
         <p>© 2020 Ateneo de Naga University</p>
-    </div>
+    </div>     
 </body>
+           

@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <head>
     <title>
-        Frequently Asked Questions
+        Frequently Asked Questions / COVID-19 Self Checker
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -46,6 +46,16 @@
                             FAQs
                         </h2>
                     </a>
+                    <a class="nav-item nav-link" href="News.php">
+                        <h2>
+                            News
+                        </h2>
+                    </a>
+                    <a class="nav-item nav-link" href="Countries.php">
+                        <h2>
+                            Countries
+                        </h2>
+                    </a>
                     <a class="nav-item nav-link" href="About.php">
                         <h2>
                             About
@@ -71,6 +81,48 @@
     <!--Card FAQs-->
     <div class="card card-faqs">
         <div class="card-body">
+            <!--Global COVID-19 INFO API-->
+            <h5 class="card-grand-title">
+                GLOBAL COVID-19 INFORMATION
+            </h5>
+            
+            <?php $json_string = file_get_contents("https://coronavirus-19-api.herokuapp.com/all"); ?>
+            <?php $parsed_json = json_decode($json_string, true); ?>
+        
+            <div class="card-stats-1">
+                <img class="card-img-top" src="https://th.boell.org/sites/default/files/grid/2020/04/15/11.jpg">
+                <div class="stats-cap-1">
+                    CASES
+                </div>
+                <div>
+                    <p class="stats">
+                        <?php echo number_format($parsed_json['cases']); ?> 
+                    </p>
+                </div>
+            </div>
+            <div class="card-stats-2">
+                <img class="card-img-top" src="https://static.euronews.com/articles/stories/04/61/76/02/602x338_cmsv2_0bc17b69-d198-5281-9622-27370547b370-4617602.jpg">
+                <div class="stats-cap-2">
+                    DEATHS
+                </div>
+                <div>
+                    <p class="stats">
+                        <?php echo number_format($parsed_json['deaths']); ?> 
+                    </p>
+                </div>
+            </div>
+            <div class="card-stats-3">
+                <img class="card-img-top" src="https://i.insider.com/5e7ba2f5487c2211ce375394?width=1100&format=jpeg&auto=webp">
+                <div class="stats-cap-3">
+                    RECOVERED
+                </div>
+                <div>
+                    <p class="stats">
+                        <?php echo number_format($parsed_json['recovered']); ?> 
+                    </p>
+                </div>
+            </div>
+            
             <h5 class="card-title">
                 What is a novel coronavirus?
             </h5>
@@ -232,7 +284,7 @@
                 <li>Congestion or runny nose</li>
                 <li>Nausea or vomiting</li>
                 <li>Diarrhea</li>
-            </ul>
+            </ul> 
         </div>
     </div>
 

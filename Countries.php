@@ -8,17 +8,10 @@
                         proven guilty, I won't be credited any points for this endeavor.
 -->
 
-<?php
-    include 'Insert.php';
-
-    $sql = "SELECT * FROM data_table";
-    $result = mysqli_query($conn, $sql)or die(mysqli_error());
-?>
-
 <!DOCTYPE html>
 <head>
     <title>
-        Data / COVID-19 Self Checker
+        Countries / COVID-19 Self Checker
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -81,58 +74,46 @@
     <!--Header-->
     <div class="jumbotron">
         <h1 class="display-4">
-            Data
+            COVID-19 Information by Country
         </h1>
     </div>
     
-    <!--Card Data-->
-    <div class="card card-data">
+    <!--Card Country-->
+    <div class="card card-country">
         <div class="card-body">
-           
-            <!--Show Table-->
-            <form method = "post"> 
-                <table class="table table-hover">
-                    <thead>
+            <?php $json_string = file_get_contents("https://coronavirus-19-api.herokuapp.com/countries"); ?>
+            <?php $parsed_json = json_decode($json_string, true); ?>
+
+            <table class="table table-hover">
+               <thead>
+                    <tr>
+                        <th scope="col">Country</th>
+                        <th scope="col">Cases</th>
+                        <th scope="col">Deaths</th>
+                        <th scope="col">Recovered</th>
+                        <th scope="col">Active</th>
+                        <th scope="col">Critical</th>
+                        <th scope="col">Total Tests</th>
+                    </tr>
+                </thead>
+                 
+                <tbody>
+                    <?php foreach ($parsed_json as $value){ ?> 
                         <tr>
-                            <th scope="col" class="col-data">#</th>
-                            <th scope="col" class="col-data">Age</th>
-                            <th scope="col" class="col-data">Gender</th>
-                            <th scope="col" class="col-data">Barangay</th>
-                            <th scope="col" class="col-data">Traveled Abroad?</th>
-                            <th scope="col" class="col-data">Close Contact?</th>
-                            <th scope="col" class="col-data">Symptoms</th>
-                            <th scope="col" class="col-data"></th>
-                            <th scope="col" class="col-data"></th>
+                          <td><?php echo $value['country']; ?> </td>
+                          <td><?php echo number_format($value['cases']); ?></td>
+                          <td><?php echo number_format($value['deaths']); ?></td>
+                          <td><?php echo number_format($value['recovered']); ?> </td>
+                          <td><?php echo number_format($value['active']); ?></td>
+                          <td><?php echo number_format($value['critical']); ?></td>
+                          <td><?php echo number_format($value['totalTests']); ?> </td>
                         </tr>
-                    </thead>
-
-                    <!--Fetch Data-->        
-                    <?php
-                        $sql = "SELECT * FROM data_table";
-                        $result = mysqli_query($conn, $sql)or die(mysqli_error());
-
-                        while ($row = mysqli_fetch_array($result)) {
-                    ?>    
-                            <tr>
-                            <td><?php echo $row["Submit_ID"]; ?></td>
-                            <td><?php echo $row["Age"]; ?></td>
-                            <td><?php echo $row["Gender"]; ?></td>
-                            <td><?php echo $row["Barangay"]; ?></td>
-                            <td><?php echo $row["Traveled_Abroad"]; ?></td>
-                            <td><?php echo $row["Close_Contact"]; ?></td>
-                            <td><?php echo $row["Symptoms"]; ?></td>
-                            <td><a class="btn btn-success" href="Edit.php?Submit_ID=<?php echo $row["Submit_ID"]; ?>">Edit</a></td>
-                            <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this data?');" href="Delete.php?Submit_ID=<?php echo $row["Submit_ID"]; ?>">Delete</a></td>
-                            </tr>         
-                    <?php  
-                        } 
-                        mysqli_close($conn);
-                    ?>
-                </table>
-            </form>
+                    <?php } ?>
+                </tbody>
+            </table> 
         </div>
     </div>
-        
+    
     <!--Footer-->
     <div class="main-footer">
         <p>© 2020 Ateneo de Naga University</p>

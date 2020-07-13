@@ -13,7 +13,7 @@
 <?php
     //---Delete Information---
     $submit_id = $_REQUEST['Submit_ID'];
-    $sql = "DELETE FROM table1 WHERE submit_id =" .$_GET['Submit_ID'];
+    $sql = "DELETE FROM data_table WHERE submit_id =" .$_GET['Submit_ID'];
     $result = mysqli_query($conn, $sql) or die ( mysqli_error());
     $row = mysqli_fetch_array($result);
     header("Location: Data.php"); 

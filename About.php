@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <head>
     <title>
-        About
+        About / COVID-19 Self Checker
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -44,6 +44,16 @@
                     <a class="nav-item nav-link" href="FAQs.php">
                         <h2>
                             FAQs
+                        </h2>
+                    </a>
+                    <a class="nav-item nav-link" href="News.php">
+                        <h2>
+                            News
+                        </h2>
+                    </a>
+                    <a class="nav-item nav-link" href="Countries.php">
+                        <h2>
+                            Countries
                         </h2>
                     </a>
                     <a class="nav-item nav-link" href="About.php">

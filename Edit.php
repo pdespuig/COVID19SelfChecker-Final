@@ -12,7 +12,7 @@
 
 <?php 
     if (isset($_GET['Submit_ID'])){
-        $sql = "SELECT * FROM table1 WHERE submit_id =" .$_GET['Submit_ID'];
+        $sql = "SELECT * FROM data_table WHERE submit_id =" .$_GET['Submit_ID'];
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
     }
@@ -40,12 +40,14 @@
       
         if (isset($_POST['symptoms'])){
             $symptoms = $_POST['symptoms'];
+            $coma = "";
             foreach($symptoms as $check){  
-                $chk .= $check.", ";  
+                $chk .= $coma.$check;
+                $coma = ", ";
             } 
         }
         
-        $update = "UPDATE table1 SET 
+        $update = "UPDATE data_table SET 
                     age='$age', 
                     gender='$gender', 
                     barangay='$barangay', 
@@ -67,7 +69,7 @@
 <!DOCTYPE html>
 <head>
     <title>
-        Edit
+        Edit / COVID-19 Self Checker
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -111,7 +113,7 @@
                         <label>
                             Age
                         </label>
-                        <input type="number" autocomplete="off" class="form-control" name="age" id="age" value="<?php echo $row['Age']; ?>">
+                        <input type="number" min="1" autocomplete="off" class="form-control" name="age" id="age" value="<?php echo $row['Age']; ?>">
                     </div>
                     <div class="form-group">
                         <label>

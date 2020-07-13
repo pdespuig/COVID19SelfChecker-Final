@@ -39,12 +39,14 @@
       
         if (isset($_POST['symptoms'])){
             $symptoms = $_POST['symptoms'];
+            $coma = "";
             foreach($symptoms as $check){  
-                $chk .= $check.", ";  
+                $chk .= $coma.$check;
+                $coma = ", ";
             } 
         }
           
-        $sql = "INSERT into table1(age, gender, barangay, traveled_abroad, close_contact, symptoms)
+        $sql = "INSERT into data_table(age, gender, barangay, traveled_abroad, close_contact, symptoms)
                 VALUES('$age','$gender','$barangay','$travel','$close_contact','$chk')";
         
         if (mysqli_query($conn, $sql)){

@@ -9,6 +9,9 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
+.navbar-brand:hover {
+    transform: scale(1.5);
+}
 .navbar-nav {
     margin-right: 100px;
 }
@@ -18,6 +21,7 @@ h1 {
     color: white;
     margin-left: 50px;
     margin-top: -40px;
+    text-shadow: 4px 3px 0 #7A7A7A;
 }
 h2 {
     font-family: 'Concert One', cursive;
@@ -25,6 +29,15 @@ h2 {
     color: white;
     margin-top: 5px;
     margin-bottom: 5px;
+    text-shadow: 4px 3px 0 #7A7A7A;
+}
+h2:hover {
+    font-family: 'Concert One', cursive;
+    font-size: 20px;
+    color: #4ce6c7;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-shadow: 4px 3px 0 #7A7A7A;
 }
 .jumbotron {
     background: linear-gradient(to bottom, #33cccc 0%, #66ffcc 100%);   
@@ -90,7 +103,10 @@ body {
 .symptoms {
     height: 80px;
     width: 80px;
-    margin-left: 20px;
+    margin-left: 50px;
+}
+.symptoms:hover {
+    transform: scale(1.5);
 }
 .check-2 {
     font-size: 20px;
@@ -130,7 +146,7 @@ body {
     -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 65rem;
-    height: 3000px;
+    height: 3500px;
     margin-left: 155px;
     margin-top: 50px;
 }
@@ -138,6 +154,7 @@ body {
     padding: 15px 15px 15px 15px;
     text-align: justify;
     color: #487ccf;
+    margin-top: 50px;
 }
 .card-data {
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -186,4 +203,129 @@ body {
 }
 .vid-cap {
     margin-left: 10px;
+}
+.card-stats-1 {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 18rem;
+    height: 180px;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: black;
+    color: lightgray;
+}
+.card-stats-2 {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 18rem;
+    height: 180px;
+    margin-left: 355px;
+    margin-top: -230px;
+    background-color: black;
+    color: lightgray;
+}
+.card-stats-3 {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 18rem;
+    height: 180px;
+    margin-left: 680px;
+    margin-top: -180px;
+    background-color: black;
+    color: lightgray;
+}
+.card-img-top {
+    height: 120px;
+    width: 18rem;
+}
+.card-img-top:hover {
+    transform: scale(1.5);
+}
+.stats-cap-1 {
+    text-align: center;
+    color: #675edb;
+    font-family: 'Concert One', cursive;
+    letter-spacing: 7px;
+    margin-top: 5px;
+}
+.stats-cap-2 {
+    text-align: center;
+    color: #e01f0d;
+    font-family: 'Concert One', cursive;
+    letter-spacing: 7px;
+    margin-top: 5px;
+}
+.stats-cap-3 {
+    text-align: center;
+    color: #1ac94f;
+    font-family: 'Concert One', cursive;
+    letter-spacing: 7px;
+    margin-top: 5px;
+}
+.stats {
+    text-align: center;
+}
+.card-grand-title {
+    font-family: 'Concert One', cursive;
+    letter-spacing: 5px;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+.card-country {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 70rem;
+    height: 10660px;
+    margin-left: 120px;
+    margin-top: 50px;
+}
+.card-news {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 70rem;
+    height: 11000px;
+    margin-left: 120px;
+    margin-top: 50px;
+    padding-top: 40px;
+}
+.news-img {
+    width: 600px;
+    height: 350px;
+    margin-left: 200px;
+    margin-top: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.news-info-title {
+    margin-left: 35px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #487ccf;
+}
+.news-info-text {
+    margin-left: 35px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    text-align: justify;
+    font-size: 16px;
+    font-style: italic;
+}
+.news-info-publish {
+    margin-left: 35px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    text-align: justify;
+    font-size: 16px;
+}
+.news-divide {
+    border-top: 1px dotted;
 }
